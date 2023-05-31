@@ -1,0 +1,219 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(https://cdn.pixabay.com/photo/2021/05/27/18/15/motorcycle-6288958_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.contenedorHeader{
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgba(200, 200, 200, 0.800);
+    height: 85px;
+}
+.logo{ 
+    display: flex;
+    width: 45%; /* TAMAÑO LOGO */
+    height: 45%;  
+    margin-right: 4rem;
+}
+
+.logoEncabezado{
+    padding: 0.5rem 0 0.1rem 3rem; /* PADDING SOLO EN LA PARTE SUPERIOR E INFERIOR */
+    align-items: center;
+    display: flex;
+    margin-bottom: 30px;
+    /* margin: 0 0 0 2rem; / / MARGEN SOLO EN LA PARTE IZQUIERDA */
+}
+
+.btnEncabezado{   /* CONTENEDOR DE LOS BOTONES DEL ENCABEZADO (INICIO S, REGISTRARSE) */
+    grid-column-start: 3;  /* ESPECIFICA QUE LOS BOTONES VAN EN LA GRILLA 3 DEL CONTENEDOR */
+    display: flex; 
+    justify-content:space-evenly; 
+    border-right: 0;
+    right: 0;
+    /* display: grid; / / ESPECIFICAR QUE EL DISPLAY SE VA A DIVIDIR */ 
+    /* grid-template-columns: repeat(3, 1fr); / / DIVIDIR EN ESPACIO EN 3 COLUMNAS DE UNA FRACCION */
+    /* grid-template-columns: 5rem 8rem 3rem 8rem; / / DIVIDIR EN ESPACIO EN 4 COLUMNAS POR REMS PARA UBICAR LOS BOTONES DE INICIOS Y REGISTRARSE */
+    /* grid-gap: 3rem; / / DARLE UN ESPACIO ENTRE LAS GRILLAS */
+    align-items: center;  /* JUSTIFICAR EL CONTENIDO EN EL CENTRO DE ARRIBA HACIA ABAJO */
+    /* justify-content:space-between; / / JUSTIFICAR EL CONTENIDO EN EL CENTRO DE LOS LADOS */
+    /* text-align: center; /  / JUSTIFICAR EL CONTENIDO EN EL CENTRO DE LOS LADOS */
+}
+.btnEnca1{ /* BOTON INICIAR SESION */
+    display: flex;
+    top: 30px;
+    color: rgb(250, 249, 249);
+    text-decoration: none; /* QUITAR DECORACION DEL TEXTO */ 
+    font-size: 1rem; /* TAMAÑO DE LA LETRA */
+    font-weight: 600;  /* GROSOR DEL TEXTO */ 
+    background-color: rgba(255, 30, 30, 0.850);
+    border-radius: 5%;
+    grid-column-start: 2;  /* ESPECIFICA QUE EL BOTON INICIOS VA EN LA GRILLA 2 DEL CONTENEDOR DE LOS BOTONES */
+    border-radius: 0.6rem; /* BORDE REDONDO AL BOTON */
+    padding: 0 0.5rem; /* ESPACIO SOLO A LOS LADOS AL BOTON */
+    font-size: 1.4rem;
+}
+.btnEnca1:hover{
+    background-color: rgba(45, 45, 45, 0.95);
+    color: white;
+}
+.btnEnca2{  /* BOTON REGISTRARSE */
+    color: rgb(255, 255, 255);
+    text-decoration: none; /* QUITAR DECORACION DEL TEXTO */ 
+    font-size: 1rem;
+    font-weight: 600;  /* GROSOR DEL TEXTO */ 
+    background-color: rgba(45, 45, 45, 0.95);
+    border-radius: 5%;
+    grid-column-start: 4; /* ESPECIFICA QUE EL BOTON REGISTRARSE VA EN LA GRILLA 4 DEL CONTENEDOR DE LOS BOTONES */
+    border-radius: 0.6rem; /* BORDE REDONDO AL BOTON */
+    padding: 0 0.5rem; /* ESPACIO SOLO A LOS LADOS AL BOTON */
+    font-size: 1.4rem;
+}
+.btnEnca2:hover{
+    background-color: rgba(255, 30, 30, 0.950);
+    color: rgb(0, 0, 0);
+}
+
+.gridContainer{ /* CONTENEDOR DEL MENU HORIZONTAL */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* AGREGA COLUMNAS A LA GRILLA */ 
+/*     grid-template-rows: repeat(3, 1fr) AGREGA FILAS A LA GRILLA */
+    background-color: rgba(30, 30, 30, 0.850);
+}
+
+.migaPan {
+    grid-column-start: 1;
+    text-decoration: none;
+    display: block;
+    align-items: center;
+    justify-items: center;
+    color: rgba(200, 200, 200, 0.800);
+    font-size: 1.5rem;
+    padding: 0.7rem 0 0 1rem; /* ESPACIO ARRIBA Y LADO IZQUIDO DE LA MIGA DE PAN */
+}
+
+.nav{  /* MENU HORIZONTAL */
+    color: rgb(253, 249, 249);
+    grid-column-start: 2; /* ESPECIFICA EN QUE GRILLA VA ESTAR EN CONTENIDO */
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.nav-text{
+    font-size: 1.5rem;
+}
+
+.nav li a{  /* ITEMS DEL MENU  (lista y links) */
+    display: block;
+    padding: 0.6rem 1rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.nav li:hover{ /* BACKGROUND DE LA LISTA CUANDO PASE EL CURSOR */
+    background-color: rgba(255, 30, 30, 0.850);
+}
+
+.menuVertical{  /* MENU VERTICAL ADESPLEGABLE*/ 
+    display: none;
+    position: absolute;
+    list-style: none;
+    width: 15rem;
+    padding: 0; 
+    background-color: rgba(30, 30, 30, 0.850);
+    z-index: 2; /*mandar las cosas al frente*/
+}
+.nav li:hover .menuVertical{ /* DESPLIEGUE DE LA LISTA PASANDO EL CURSOR */
+    display: block;  
+}
+.menuVertical li:hover{  /* BACKGROUND DE LOS ITEMS DE LA LISTA VERTICAL DESPLEGABLE */
+    background-color: rgba(200, 200, 200, 0.800);
+}
+.menuVertical li a{  /* ITEMS DEL MENU VERTICAL DESPLEGABLE */
+    display: block;
+    color: white;
+    padding: 1rem 1rem 1rem 1.3rem;
+}
+.menuVertical li a:hover{  /* COLOR NEGRO PARA LOS ITEMS DEL MENU VERTICAL DESPLEGABLE CUANDO PASE EL CURSOR */
+    color: rgb(70, 68, 68);
+}
+
+.imgS{
+    width: 30%;
+    height: 50%;
+    border-radius: 5px;
+    border: 2px solid rgba(200, 200, 200, 0.800);
+    margin: 2rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-link{
+    color:white;
+}
+.card{
+    width: 20rem;
+}
+.btn{
+    display: flex; 
+    justify-content: center;
+     
+}
+/* .breadcrumb{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+    color: white;
+}
+.breadcrumb-item{
+    color: white;
+} */
+.container-ac{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(128, 128, 128, 0.308);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.container{
+    background-color: rgba(180, 176, 176, 0.281);
+    border-radius: 20px;
+}
+
+.product-card{
+    background-color: rgba(163, 146, 146, 0.616);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.container-footer{
+    background-color: rgb(240, 242, 247);
+    color: rgb(12, 11, 11);
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    }
+/* .icons{
+    color: white;
+    font-size: 2rem;
+    padding: rem;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.308);
+    list-style: circle;
+    } */
